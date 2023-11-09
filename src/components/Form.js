@@ -28,6 +28,7 @@ const Form = ({
 					placeholder='예상 지출액을 적어주세요'
 					onChange={handleExpenseValueChange}
 					value={expenseValue}
+					required
 				/>
 			</div>
 			<input

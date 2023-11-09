@@ -37,7 +37,7 @@ const List = ({
 
 	if (isEditing) {
 		return (
-			<li className='flex justify-between py-2 px-2 mb-2 bg-gray-100 hover:bg-gray-200 active:bg-gray-300'>
+			<li className='flex justify-between py-2 px-2 mb-2 rounded bg-gray-100 hover:bg-gray-200 active:bg-gray-300'>
 				<form
 					className='flex'
 					onSubmit={handleEditSubmit}>
@@ -46,12 +46,14 @@ const List = ({
 						type='text'
 						className='w-full px-3  mr-4 text-gray-500 rounded'
 						onChange={handleEditNameChange}
+						required
 					/>
 					<input
 						value={editedValue}
 						type='number'
 						className='w-full px-3  mr-4 text-gray-500 rounded'
 						onChange={handleEditValueChange}
+						required
 					/>
 				</form>
 				<button
