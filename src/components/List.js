@@ -37,20 +37,20 @@ const List = ({
 
 	if (isEditing) {
 		return (
-			<li className='flex justify-between mb-2 bg-gray-100 hover:bg-gray-200 active:bg-gray-300'>
+			<li className='flex justify-between py-2 px-2 mb-2 bg-gray-100 hover:bg-gray-200 active:bg-gray-300'>
 				<form
 					className='flex'
 					onSubmit={handleEditSubmit}>
 					<input
 						value={editedName}
 						type='text'
-						className='w-full px-3 py-2 mr-4 text-gray-500 rounded'
+						className='w-full px-3  mr-4 text-gray-500 rounded'
 						onChange={handleEditNameChange}
 					/>
 					<input
 						value={editedValue}
 						type='number'
-						className='w-full px-3 py-2 mr-4 text-gray-500 rounded'
+						className='w-full px-3  mr-4 text-gray-500 rounded'
 						onChange={handleEditValueChange}
 					/>
 				</form>
@@ -75,7 +75,7 @@ const List = ({
 				{...provided.dragHandleProps}
 				className={`${
 					snapshot.isDragging ? 'bg-gray-400' : 'bg-gray-100'
-				} flex justify-between mb-2 hover:bg-gray-200 active:bg-gray-300`}>
+				} flex justify-between mb-2 hover:bg-gray-200 active:bg-gray-300 py-2 px-2 rounded`}>
 				<span className='flex-1'>{name}</span>
 				<span className='flex-1'>
 					{parseInt(value).toLocaleString()}원
