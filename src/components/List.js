@@ -10,11 +10,13 @@ const List = ({
 	handleRemove,
 	expenseData,
 	setExpenseData,
+	setIsEditing,
 }) => {
-	const [isEditing, setisEditing] = useState(false);
-	const [editedName, setEditedName] = useState(name);
-	const [editedValue, setEditedValue] = useState(value);
-
+	const handleEdit = (id) => {
+		setIsEditing(true);
+		setEditedName(name);
+		setEditedValue(value);
+	};
 	const handleEditSubmit = (e) => {
 		e.preventDefault();
 		let newExpenseData = expenseData.map((data) => {
@@ -84,7 +86,7 @@ const List = ({
 				</span>
 				<button
 					className='flex-none mr-2'
-					onClick={() => setisEditing(true)}>
+					onClick={() => handleEdit(id)}>
 					수정
 				</button>
 				<button

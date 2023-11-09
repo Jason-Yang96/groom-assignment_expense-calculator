@@ -2,7 +2,14 @@ import React from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import List from './List';
 
-const Lists = ({ handleEnd, handleRemove, expenseData, setExpenseData }) => {
+const Lists = ({
+	handleEnd,
+	handleRemove,
+	expenseData,
+	setExpenseData,
+	setIsEditing,
+	setEditedName,
+}) => {
 	return (
 		<div>
 			<DragDropContext onDragEnd={handleEnd}>
@@ -27,6 +34,7 @@ const Lists = ({ handleEnd, handleRemove, expenseData, setExpenseData }) => {
 											snapshot={snapshot}
 											handleRemove={handleRemove}
 											setExpenseData={setExpenseData}
+											setIsEditing={setIsEditing}
 										/>
 									)}
 								</Draggable>

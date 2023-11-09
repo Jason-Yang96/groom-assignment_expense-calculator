@@ -6,38 +6,74 @@ const Form = ({
 	expenseName,
 	handleExpenseValueChange,
 	expenseValue,
+	isEditing,
 }) => {
-	return (
-		<form
-			className='flex justify-between'
-			onSubmit={handleSubmit}>
-			<div className='flex flex-col flex-1'>
-				<label>지출 항목</label>
+	const handleEditSubmit = (e) => {};
+	if (isEditing) {
+		return (
+			<form
+				className='flex justify-between'
+				onSubmit={handleEditSubmit}>
+				<div className='flex flex-col flex-1'>
+					<label>지출 항목</label>
+					<input
+						type='text'
+						placeholder='항목 이름을 적어주세요'
+						onChange={handleExpenseNameChange}
+						value={expenseName}
+					/>
+				</div>
+				<div className='flex flex-col flex-1'>
+					<label>예상 비용</label>
+					<input
+						type='number'
+						min='500'
+						placeholder='예상 지출액을 적어주세요'
+						onChange={handleExpenseValueChange}
+						value={expenseValue}
+						required
+					/>
+				</div>
 				<input
-					type='text'
-					placeholder='항목 이름을 적어주세요'
-					onChange={handleExpenseNameChange}
-					value={expenseName}
+					className='flex-none'
+					type='submit'
+					value='완료'
 				/>
-			</div>
-			<div className='flex flex-col flex-1'>
-				<label>예상 비용</label>
+			</form>
+		);
+	} else {
+		return (
+			<form
+				className='flex justify-between'
+				onSubmit={handleSubmit}>
+				<div className='flex flex-col flex-1'>
+					<label>지출 항목</label>
+					<input
+						type='text'
+						placeholder='항목 이름을 적어주세요'
+						onChange={handleExpenseNameChange}
+						value={expenseName}
+					/>
+				</div>
+				<div className='flex flex-col flex-1'>
+					<label>예상 비용</label>
+					<input
+						type='number'
+						min='500'
+						placeholder='예상 지출액을 적어주세요'
+						onChange={handleExpenseValueChange}
+						value={expenseValue}
+						required
+					/>
+				</div>
 				<input
-					type='number'
-					min='500'
-					placeholder='예상 지출액을 적어주세요'
-					onChange={handleExpenseValueChange}
-					value={expenseValue}
-					required
+					className='flex-none'
+					type='submit'
+					value='추가'
 				/>
-			</div>
-			<input
-				className='flex-none'
-				type='submit'
-				value='추가'
-			/>
-		</form>
-	);
+			</form>
+		);
+	}
 };
 
 export default Form;

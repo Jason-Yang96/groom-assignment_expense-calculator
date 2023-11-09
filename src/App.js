@@ -15,6 +15,9 @@ const App = () => {
 	const [expenseName, setExpenseName] = useState('');
 	const [expenseValue, setExpenseValue] = useState('');
 	const [alertMessage, setAlertMessage] = useState(null);
+	const [isEditing, setIsEditing] = useState(false);
+	const [editedName, setEditedName] = useState('');
+	const [editedValue, setEditedValue] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -71,12 +74,15 @@ const App = () => {
 					expenseName={expenseName}
 					handleExpenseValueChange={handleExpenseValueChange}
 					expenseValue={expenseValue}
+					isEditing={isEditing}
 				/>
 				<Lists
 					handleRemove={handleRemove}
 					handleEnd={handleEnd}
 					expenseData={expenseData}
 					setExpenseData={setExpenseData}
+					setIsEditing={setIsEditing}
+					setEditedName={setEditedName}
 				/>
 			</div>
 			<Sum expenseData={expenseData} />
