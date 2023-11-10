@@ -16,6 +16,7 @@ const Form = ({
 	setExpenseData,
 	setIsEditing,
 	setEditedId,
+	setAlertMessage,
 }) => {
 	const handleEditNameChange = (e) => {
 		setEditedName(e.target.value);
@@ -35,6 +36,8 @@ const Form = ({
 		setExpenseData(newExpenseData);
 		setIsEditing(false);
 		setEditedId(null);
+		setAlertMessage('항목이 수정되었습니다');
+		setTimeout(() => setAlertMessage(null), 2000);
 		localStorage.setItem('expenseData', JSON.stringify(newExpenseData));
 	};
 	if (isEditing) {

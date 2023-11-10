@@ -12,6 +12,7 @@ const Lists = ({
 	setEditedValue,
 	setEditedId,
 	editedId,
+	setAlertMessage,
 }) => {
 	return (
 		<div>
@@ -42,6 +43,7 @@ const Lists = ({
 											setEditedValue={setEditedValue}
 											setEditedId={setEditedId}
 											editedId={editedId}
+											setAlertMessage={setAlertMessage}
 										/>
 									)}
 								</Draggable>
