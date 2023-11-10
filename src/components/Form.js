@@ -1,4 +1,6 @@
 import React from 'react';
+import { MdLibraryAdd } from 'react-icons/md';
+import { BsFillSendPlusFill } from 'react-icons/bs';
 
 const Form = ({
 	handleSubmit,
@@ -63,12 +65,11 @@ const Form = ({
 						required
 					/>
 				</div>
-				<input
+				<button
 					className='flex-none'
-					type='submit'
-					value='완료'
-					onSubmit={handleEditSubmit}
-				/>
+					onSubmit={handleEditSubmit}>
+					<BsFillSendPlusFill />
+				</button>
 			</form>
 		);
 	} else {
@@ -96,11 +97,9 @@ const Form = ({
 						required
 					/>
 				</div>
-				<input
-					className='flex-none'
-					type='submit'
-					value='추가'
-				/>
+				<button className='flex-none'>
+					<MdLibraryAdd />
+				</button>
 			</form>
 		);
 	}

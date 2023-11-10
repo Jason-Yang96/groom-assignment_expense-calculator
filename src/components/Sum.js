@@ -2,7 +2,7 @@ import React from 'react';
 
 const Sum = ({ expenseData }) => {
 	return (
-		<h1>
+		<h1 className='text-xl font-semibold'>
 			총 예상 지출액:{' '}
 			{expenseData
 				.reduce((total, data) => total + parseInt(data.value), 0)

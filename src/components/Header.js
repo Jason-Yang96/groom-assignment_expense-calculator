@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiFillDelete } from 'react-icons/ai';
 
 const Header = ({ setExpenseData, setAlerMessage }) => {
 	const handleRomoveAllClick = () => {
@@ -10,7 +11,9 @@ const Header = ({ setExpenseData, setAlerMessage }) => {
 	return (
 		<header className='flex justify-between mb-3'>
 			<h1 className='text-2xl font-semibold	'>예산 계산기</h1>
-			<button onClick={handleRomoveAllClick}>Delete All</button>
+			<button onClick={handleRomoveAllClick}>
+				<AiFillDelete />
+			</button>
 		</header>
 	);
 };

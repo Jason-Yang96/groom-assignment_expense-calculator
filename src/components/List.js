@@ -1,5 +1,6 @@
 import React from 'react';
-// import { useState } from 'react';
+import { BiSolidEditAlt } from 'react-icons/bi';
+import { FaDeleteLeft } from 'react-icons/fa6';
 
 const List = ({
 	id,
@@ -35,12 +36,12 @@ const List = ({
 			<button
 				className='flex-none mr-2'
 				onClick={() => handleEdit(id)}>
-				수정
+				<BiSolidEditAlt />
 			</button>
 			<button
 				className='flex-none'
 				onClick={() => handleRemove(id)}>
-				삭제
+				<FaDeleteLeft />
 			</button>
 		</li>
 	);
