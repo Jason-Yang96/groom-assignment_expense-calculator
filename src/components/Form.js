@@ -78,7 +78,7 @@ const Form = ({
 				className='flex justify-between'
 				onSubmit={handleSubmit}>
 				<div className='flex flex-col flex-1'>
-					<label>지출 항목</label>
+					<label className='text-sm font-bold'>지출 항목</label>
 					<input
 						type='text'
 						placeholder='항목 이름을 적어주세요'
@@ -87,7 +87,7 @@ const Form = ({
 					/>
 				</div>
 				<div className='flex flex-col flex-1'>
-					<label>예상 비용</label>
+					<label className='text-sm font-bold'>예상 비용</label>
 					<input
 						type='number'
 						min='500'
