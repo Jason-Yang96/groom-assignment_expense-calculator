@@ -9,6 +9,7 @@ const Lists = ({
 	setExpenseData,
 	setIsEditing,
 	setEditedName,
+	setEditedValue,
 }) => {
 	return (
 		<div>
@@ -35,6 +36,8 @@ const Lists = ({
 											handleRemove={handleRemove}
 											setExpenseData={setExpenseData}
 											setIsEditing={setIsEditing}
+											setEditedName={setEditedName}
+											setEditedValue={setEditedValue}
 										/>
 									)}
 								</Draggable>

@@ -75,6 +75,13 @@ const App = () => {
 					handleExpenseValueChange={handleExpenseValueChange}
 					expenseValue={expenseValue}
 					isEditing={isEditing}
+					editedName={editedName}
+					editedValue={editedValue}
+					setEditedName={setEditedName}
+					setEditedValue={setEditedValue}
+					expenseData={expenseData}
+					setExpenseData={setExpenseData}
+					setIsEditing={setIsEditing}
 				/>
 				<Lists
 					handleRemove={handleRemove}
@@ -83,6 +90,7 @@ const App = () => {
 					setExpenseData={setExpenseData}
 					setIsEditing={setIsEditing}
 					setEditedName={setEditedName}
+					setEditedValue={setEditedValue}
 				/>
 			</div>
 			<Sum expenseData={expenseData} />
