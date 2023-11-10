@@ -10,10 +10,12 @@ const Form = ({
 	isEditing,
 	editedName,
 	editedValue,
+	editedId,
 	setEditedName,
 	setEditedValue,
 	setExpenseData,
 	setIsEditing,
+	setEditedId,
 }) => {
 	const handleEditNameChange = (e) => {
 		setEditedName(e.target.value);
@@ -24,7 +26,7 @@ const Form = ({
 	const handleEditSubmit = (e) => {
 		e.preventDefault();
 		let newExpenseData = expenseData.map((data) => {
-			if (data.id === id) {
+			if (data.id === editedId) {
 				data.name = editedName;
 				data.value = editedValue;
 			}
@@ -32,6 +34,7 @@ const Form = ({
 		});
 		setExpenseData(newExpenseData);
 		setIsEditing(false);
+		setEditedId(null);
 		localStorage.setItem('expenseData', JSON.stringify(newExpenseData));
 	};
 	if (isEditing) {

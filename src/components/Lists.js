@@ -10,6 +10,8 @@ const Lists = ({
 	setIsEditing,
 	setEditedName,
 	setEditedValue,
+	setEditedId,
+	editedId,
 }) => {
 	return (
 		<div>
@@ -38,6 +40,8 @@ const Lists = ({
 											setIsEditing={setIsEditing}
 											setEditedName={setEditedName}
 											setEditedValue={setEditedValue}
+											setEditedId={setEditedId}
+											editedId={editedId}
 										/>
 									)}
 								</Draggable>

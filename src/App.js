@@ -18,6 +18,7 @@ const App = () => {
 	const [isEditing, setIsEditing] = useState(false);
 	const [editedName, setEditedName] = useState('');
 	const [editedValue, setEditedValue] = useState('');
+	const [editedId, setEditedId] = useState(null);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -82,6 +83,8 @@ const App = () => {
 					expenseData={expenseData}
 					setExpenseData={setExpenseData}
 					setIsEditing={setIsEditing}
+					setEditedId={setEditedId}
+					editedId={editedId}
 				/>
 				<Lists
 					handleRemove={handleRemove}
@@ -91,6 +94,8 @@ const App = () => {
 					setIsEditing={setIsEditing}
 					setEditedName={setEditedName}
 					setEditedValue={setEditedValue}
+					setEditedId={setEditedId}
+					editedId={editedId}
 				/>
 			</div>
 			<Sum expenseData={expenseData} />

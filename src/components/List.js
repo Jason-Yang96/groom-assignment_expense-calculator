@@ -11,11 +11,13 @@ const List = ({
 	setIsEditing,
 	setEditedName,
 	setEditedValue,
+	setEditedId,
 }) => {
 	const handleEdit = (id) => {
 		setIsEditing(true); // isEditing 값을 true로 바꿔준다.
 		setEditedName(name);
 		setEditedValue(value);
+		setEditedId(id);
 	};
 
 	return (
