@@ -11,14 +11,12 @@ const List = ({
 	setIsEditing,
 	setEditedName,
 	setEditedValue,
-	setEditedId,
 	setAlertMessage,
 }) => {
 	const handleEdit = (id) => {
-		setIsEditing(true); // isEditing 값을 true로 바꿔준다.
+		setIsEditing(id); // isEditing 값을 true로 바꿔준다.
 		setEditedName(name);
 		setEditedValue(value);
-		setEditedId(id);
 		setAlertMessage('항목이 수정되고 있습니다');
 		setTimeout(() => setAlertMessage(null), 2000);
 	};

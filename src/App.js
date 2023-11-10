@@ -14,10 +14,9 @@ const App = () => {
 	const [expenseData, setExpenseData] = useState(initialExpenseData);
 	const [expenseName, setExpenseName] = useState('');
 	const [expenseValue, setExpenseValue] = useState('');
-	const [isEditing, setIsEditing] = useState(false);
+	const [isEditing, setIsEditing] = useState(null);
 	const [editedName, setEditedName] = useState('');
 	const [editedValue, setEditedValue] = useState('');
-	const [editedId, setEditedId] = useState(null);
 	const [alertMessage, setAlertMessage] = useState(null);
 
 	const handleSubmit = (e) => {
@@ -83,8 +82,6 @@ const App = () => {
 					expenseData={expenseData}
 					setExpenseData={setExpenseData}
 					setIsEditing={setIsEditing}
-					setEditedId={setEditedId}
-					editedId={editedId}
 					setAlertMessage={setAlertMessage}
 				/>
 				<Lists
@@ -95,8 +92,6 @@ const App = () => {
 					setIsEditing={setIsEditing}
 					setEditedName={setEditedName}
 					setEditedValue={setEditedValue}
-					setEditedId={setEditedId}
-					editedId={editedId}
 					setAlertMessage={setAlertMessage}
 				/>
 			</div>

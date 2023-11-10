@@ -10,12 +10,10 @@ const Form = ({
 	isEditing,
 	editedName,
 	editedValue,
-	editedId,
 	setEditedName,
 	setEditedValue,
 	setExpenseData,
 	setIsEditing,
-	setEditedId,
 	setAlertMessage,
 }) => {
 	const handleEditNameChange = (e) => {
@@ -27,15 +25,15 @@ const Form = ({
 	const handleEditSubmit = (e) => {
 		e.preventDefault();
 		let newExpenseData = expenseData.map((data) => {
-			if (data.id === editedId) {
+			if (data.id === isEditing) {
 				data.name = editedName;
 				data.value = editedValue;
 			}
 			return data;
 		});
 		setExpenseData(newExpenseData);
-		setIsEditing(false);
-		setEditedId(null);
+		setIsEditing(null);
+		// setEditedId(null);
 		setAlertMessage('항목이 수정되었습니다');
 		setTimeout(() => setAlertMessage(null), 2000);
 		localStorage.setItem('expenseData', JSON.stringify(newExpenseData));
