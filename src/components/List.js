@@ -47,38 +47,3 @@ const List = ({
 };
 
 export default List;
-
-// if (isEditing) {
-// 	return (
-// 		<li className='flex justify-between py-2 px-2 mb-2 rounded bg-gray-100 hover:bg-gray-200 active:bg-gray-300'>
-// 			<form
-// 				className='flex'
-// 				onSubmit={handleEditSubmit}>
-// 				<input
-// 					value={editedName}
-// 					type='text'
-// 					className='w-full px-3  mr-4 text-gray-500 rounded'
-// 					onChange={handleEditNameChange}
-// 					required
-// 				/>
-// 				<input
-// 					value={editedValue}
-// 					type='number'
-// 					className='w-full px-3  mr-4 text-gray-500 rounded'
-// 					onChange={handleEditValueChange}
-// 					required
-// 				/>
-// 			</form>
-// 			<button
-// 				className='flex-none mr-2'
-// 				onClick={handleEditSubmit}>
-// 				저장
-// 			</button>
-// 			<button
-// 				className='flex-none'
-// 				onClick={() => handleRemove(id)}>
-// 				삭제
-// 			</button>
-// 		</li>
-// 	);
-// } else {
