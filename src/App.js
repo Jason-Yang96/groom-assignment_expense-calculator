@@ -22,7 +22,7 @@ const App = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		let newExpense = {
+		const newExpense = {
 			id: Date.now(),
 			name: expenseName,
 			value: expenseValue,
