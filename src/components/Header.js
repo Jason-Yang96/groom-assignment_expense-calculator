@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 
-const Header = ({ setExpenseData, setAlerMessage }) => {
+const Header = React.memo(({ setExpenseData, setAlerMessage }) => {
 	const handleRomoveAllClick = () => {
 		if (setExpenseData.length) {
 			setExpenseData([]);
@@ -18,6 +18,6 @@ const Header = ({ setExpenseData, setAlerMessage }) => {
 			</button>
 		</header>
 	);
-};
+});
 
 export default Header;

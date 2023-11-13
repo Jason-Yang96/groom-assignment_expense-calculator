@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Notification from './components/Notification';
@@ -43,13 +43,16 @@ const App = () => {
 	const handleExpenseValueChange = (e) => {
 		setExpenseValue(e.target.value);
 	};
-	const handleRemove = (id) => {
-		let newExpenseData = expenseData.filter((data) => data.id !== id);
-		setExpenseData(newExpenseData);
-		setAlertMessage('항목이 삭제되었습니다');
-		setTimeout(() => setAlertMessage(null), 2000);
-		localStorage.setItem('expenseData', JSON.stringify(newExpenseData));
-	};
+	const handleRemove = useCallback(
+		(id) => {
+			let newExpenseData = expenseData.filter((data) => data.id !== id);
+			setExpenseData(newExpenseData);
+			setAlertMessage('항목이 삭제되었습니다');
+			setTimeout(() => setAlertMessage(null), 2000);
+			localStorage.setItem('expenseData', JSON.stringify(newExpenseData));
+		},
+		[expenseData]
+	);
 
 	const handleEnd = (e) => {
 		if (!e.destination) return;
