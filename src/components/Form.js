@@ -27,7 +27,7 @@ const Form = React.memo(
 		};
 		const handleEditSubmit = (e) => {
 			e.preventDefault();
-			let newExpenseData = expenseData.map((data) => {
+			const newExpenseData = expenseData.map((data) => {
 				if (data.id === isEditing) {
 					data.name = editedName;
 					data.value = editedValue;
